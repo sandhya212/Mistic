@@ -1,0 +1,5 @@
+Apidocs
+=======
+
+.. automodule:: pokedex
+   :members:
