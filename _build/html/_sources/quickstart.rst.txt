@@ -1,20 +1,19 @@
 Quickstart
 ==========
 
-The Pokédex package contains basic information about the three `starter Pokémon <https://bulbapedia.bulbagarden.net/wiki/Starter_Pok%C3%A9mon>`_ from the `core series`_. These are detailed in :doc:`apidocs`.
+This is a Python tool using the Bokeh library to view multiple multiplex images simultaneously. Currently the code supports 7-panel Vectra images.
 
-.. _starter:
+A sample Bokeh GUI with user inputs is shown below:
 
-About starter Pokémon
+
+.. _features:
+
+Mistic features
 ---------------------
 
-.. _startpoke:
+.. _startGUI:
 
-.. figure:: starter_pokemon.png
+.. figure:: mistic_gui.png
 
-   Starter Pokémon from the core series.
-
-As you can see in the :ref:`startpoke` image, these starter Pokémon have different types and abilities, and will evolve into different creatures as their level progresses.
-
-Base Stats
+Requirements
 ~~~~~~~~~~
