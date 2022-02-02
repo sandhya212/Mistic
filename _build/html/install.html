@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. Installation &mdash; mistic  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>4. Code Installation &mdash; mistic  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -17,8 +17,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Apidocs" href="apidocs.html" />
-    <link rel="prev" title="2. Functions" href="function_get_cell_coords.html" /> 
+    <link rel="next" title="5. Apidocs" href="apidocs.html" />
+    <link rel="prev" title="3. Requirements" href="requirements.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,8 +40,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">1. Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function_get_cell_coords.html">2. Functions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs.html">4. Apidocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">3. Requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Code Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-mistic">4.1. Download Mistic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preload-user-data">4.2. Preload user data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-mistic">4.3. Run Mistic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs.html">5. Apidocs</a></li>
 </ul>
 
         </div>
@@ -58,7 +64,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>3. Installation</li>
+      <li>4. Code Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -68,18 +74,76 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="installation">
-<h1>3. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Download this code repository or at the command line:</p>
+  <section id="code-installation">
+<h1>4. Code Installation<a class="headerlink" href="#code-installation" title="Permalink to this headline">¶</a></h1>
+<section id="download-mistic">
+<h2>4.1. Download Mistic<a class="headerlink" href="#download-mistic" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Download this code repository from:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">https://github.com/MathOnco/Mistic</span></code></p>
+<ul class="simple">
+<li><p>Open a Terminal and at the command line, type:</p></li>
+</ul>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/MathOnco/Mistic.git</span></code></p>
+<ul class="simple">
+<li><p>Code can also be downloaded from:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">https://zenodo.org/record/5912170#.YfrkKljML1I</span></code></p>
+</section>
+<section id="preload-user-data">
+<h2>4.2. Preload user data<a class="headerlink" href="#preload-user-data" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>In the Mistic folder, navigate to /user_inputs folder to upload input files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Mistic_code/code/user_inputs/</span></code></p></li>
+<li><p>Use the /figures folder to upload the multiplexed images</p></li>
+<li><p>Use the /metadata folder to upload the imaging markers of interest as Markers_ids.csv</p></li>
+<li><p>(Optional) Use the /metadata folder to</p>
+<ul>
+<li><p>Upload image tSNE co-ordinates as X_imagetSNE.csv</p></li>
+<li><p>Upload image metadata such as</p>
+<ul>
+<li><p>Cluster labels as Cluster_categories.csv</p></li>
+<li><p>Patient_ids as Patient_ids.csv</p></li>
+<li><p>Treatments as Treatment_catgories.csv</p></li>
+<li><p>Patent response as Response_categories.csv</p></li>
+</ul>
+</li>
+<li><p>Sample metadata files are provided for reference</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Open a command prompt (or the Terminal application), change to the directory containing /code and type</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="run-mistic">
+<h2>4.3. Run Mistic<a class="headerlink" href="#run-mistic" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Upon successful completion of the previous step, Mistic can be run.</p></li>
+<li><p>To run the application, at the command prompt pointing to /app, type</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span> <span class="pre">--port</span> <span class="pre">5098</span> <span class="pre">--show</span> <span class="pre">image_tSNE_GUI</span></code></p></li>
+<li><p>This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at <a class="reference external" href="http://localhost:5098/image_tSNE_GUI">http://localhost:5098/image_tSNE_GUI</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="function_get_cell_coords.html" class="btn btn-neutral float-left" title="2. Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="apidocs.html" class="btn btn-neutral float-right" title="4. Apidocs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="requirements.html" class="btn btn-neutral float-left" title="3. Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="apidocs.html" class="btn btn-neutral float-right" title="5. Apidocs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

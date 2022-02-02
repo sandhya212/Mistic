@@ -13,6 +13,7 @@ Welcome to mistic_rtd's documentation!
 
    quickstart
    function_get_cell_coords
+   requirements
    install 
    apidocs
 
