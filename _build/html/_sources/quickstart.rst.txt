@@ -16,4 +16,4 @@ Mistic features
 .. figure:: mistic_gui.png
 
 Requirements
-~~~~~~~~~~
+~~~~~~~~~~~~~

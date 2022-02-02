@@ -8,11 +8,13 @@ Welcome to mistic_rtd's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Contents:
 
    quickstart
+   function_get_cell_coords
+   install 
    apidocs
-   install
 
 Indices and tables
 ==================
