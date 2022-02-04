@@ -17,8 +17,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Installation" href="install.html" />
-    <link rel="prev" title="1. Quickstart" href="quickstart.html" /> 
+    <link rel="next" title="3. Requirements" href="requirements.html" />
+    <link rel="prev" title="1. Introduction" href="quickstart.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,7 +38,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">1. Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">1. Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Functions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#get-cell-coords-pt-a">2.1. get_cell_coords(pt,a)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-neighbours-coords-nx-ny-cells">2.2. get_neighbours(coords,nx,ny,cells)</a></li>
@@ -51,8 +51,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#draw-tsne-scatter-tsne1-file-name-hover">2.9. draw_tSNE_scatter(tsne1, file_name_hover)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs.html">4. Apidocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">3. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">4. Code Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs.html">5. Apidocs</a></li>
 </ul>
 
         </div>
@@ -84,9 +85,7 @@
 <section id="get-cell-coords-pt-a">
 <h2>2.1. get_cell_coords(pt,a)<a class="headerlink" href="#get-cell-coords-pt-a" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Get the coordinates of the cell that pt = (x,y) falls in.
-“””</p>
+<div><p>Get the coordinates of the cell that pt = (x,y) falls in.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cell_coords</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="n">a</span><span class="p">)</span>
 </pre></div>
@@ -104,12 +103,10 @@ coordinates of the cell that pt lies in</p>
 <section id="get-neighbours-coords-nx-ny-cells">
 <h2>2.2. get_neighbours(coords,nx,ny,cells)<a class="headerlink" href="#get-neighbours-coords-nx-ny-cells" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Return the indexes of points in cells neighbouring cell at coords.
+<div><p>Return the indexes of points in cells neighbouring cell at coords.
 For the cell at coords = (x,y), return the indexes of points in the cells
 with neighbouring coordinates illustrated below: ie those cells that could
-contain points closer than r
-“””</p>
+contain points closer than r</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_neighbours</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">cells</span><span class="p">):</span>
     <span class="c1"># Refer main.py on Github</span>
      <span class="k">return</span> <span class="n">neighbours</span>
@@ -134,11 +131,9 @@ List of neighbouring cells for coords</p>
 <section id="point-valid-pt-a-nx-ny-cells-samples-r">
 <h2>2.3. point_valid(pt,a,nx,ny,cells,samples,r)<a class="headerlink" href="#point-valid-pt-a-nx-ny-cells-samples-r" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Returns True or False based on if the pt is valid point to be added to samples.
+<div><p>Returns True or False based on if the pt is valid point to be added to samples.
 It must be no closer than r from any other point by checking the cells in its
-immediate neighbourhood.
-“””</p>
+immediate neighbourhood.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">point_valid</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span><span class="n">samples</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
     <span class="c1"># Refer main.py on Github</span>
      <span class="k">return</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
@@ -169,13 +164,11 @@ Returns True or False if sampled point is eligible to be pt’s neighbour</p>
 <section id="get-point-k-refpt-r-a-nx-ny-cells-samples">
 <h2>2.4. get_point(k, refpt,r,a,nx,ny,cells,samples)<a class="headerlink" href="#get-point-k-refpt-r-a-nx-ny-cells-samples" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Try to find a candidate point relative to refpt to emit in the sample.
+<div><p>Try to find a candidate point relative to refpt to emit in the sample.
 We draw up to k points from the annulus of inner radius r, outer radius 2r
 around the reference point, refpt. If none of them are suitable (because
 they’re too close to existing points in the sample), return False.
-Otherwise, return the pt.
-“””</p>
+Otherwise, return the pt.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_point</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">refpt</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span><span class="n">samples</span><span class="p">):</span>
      <span class="c1"># Refer main.py on Github</span>
      <span class="k">return</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
@@ -213,9 +206,7 @@ Returns True or False if candidate point is eligible to be refpt’s neighbour</
 <section id="button-callback">
 <h2>2.5. button_callback()<a class="headerlink" href="#button-callback" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Function that is called when user clicks ‘Run’ from the GUI
-“””</p>
+<div><p>Function that is called when user clicks ‘Run’ from the GUI</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">button</span><span class="o">-</span><span class="n">callback</span><span class="p">():</span>
      <span class="c1"># Refer main.py on Github</span>
      <span class="k">return</span> <span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">p4</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">tabs</span><span class="p">])</span>
@@ -236,10 +227,8 @@ Tabs of Panels where each panel corresponds to an image metadata</p>
 <section id="create-figure">
 <h2>2.6. create_figure()<a class="headerlink" href="#create-figure" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Function collects the user choices from the GUI and calls either the generate_stack_montage() for reading in a single image
-or the generate_image_tSNE() for multiplexed images
-“””</p>
+<div><p>Function collects the user choices from the GUI and calls either the generate_stack_montage() for reading in a single image
+or the generate_image_tSNE() for multiplexed images</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_figure</span><span class="p">():</span>
      <span class="c1"># Refer main.py on Github</span>
      <span class="k">return</span> <span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">tsne_points</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">])</span>
@@ -258,9 +247,7 @@ file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
 <section id="generate-stack-montage-chk-box-marker-sm-labels-markers">
 <h2>2.7. generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)<a class="headerlink" href="#generate-stack-montage-chk-box-marker-sm-labels-markers" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Function generates a stack montage by using each marker channel of a multiplexed image.
-“””</p>
+<div><p>Function generates a stack montage by using each marker channel of a multiplexed image.</p>
 <ul class="simple">
 <li><p>Generates evenly-spaced points on the static canvas to arrange the images in rows</p></li>
 <li><p>Reads in the user-provided tSNE</p></li>
@@ -293,9 +280,7 @@ file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
 <section id="generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers">
 <h2>2.8. generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)<a class="headerlink" href="#generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Function generates the image tSNE using the multiplexed images and based on user inputs
-“””</p>
+<div><p>Function generates the image tSNE using the multiplexed images and based on user inputs</p>
 <ul class="simple">
 <li><p>Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE</p></li>
 <li><p>Generates thumbnails, and pastes these onto the static canvas</p></li>
@@ -333,9 +318,7 @@ file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
 <section id="draw-tsne-scatter-tsne1-file-name-hover">
 <h2>2.9. draw_tSNE_scatter(tsne1, file_name_hover)<a class="headerlink" href="#draw-tsne-scatter-tsne1-file-name-hover" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>“””
-Function that generates the image tSNE scatter plots for the Live canvases
-“””</p>
+<div><p>Function that generates the image tSNE scatter plots for the Live canvases</p>
 <p><strong>Parameters</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">tsne1</span> <span class="pre">:</span> <span class="pre">float</span></code>
 2D coordinates for each image where coordinates can be randomly generated/arranged in rows/user defined.
@@ -356,8 +339,8 @@ updated based on user preferences for each ‘Run’ episode</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="quickstart.html" class="btn btn-neutral float-left" title="1. Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install.html" class="btn btn-neutral float-right" title="3. Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="requirements.html" class="btn btn-neutral float-right" title="3. Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

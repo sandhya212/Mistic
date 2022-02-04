@@ -4,9 +4,9 @@ Functions
 get_cell_coords(pt,a)
 *********************
 
-	"""
+	
 	Get the coordinates of the cell that pt = (x,y) falls in.
-	"""
+	
        
 	.. code-block:: python
 
@@ -34,12 +34,12 @@ get_cell_coords(pt,a)
 get_neighbours(coords,nx,ny,cells)
 **********************************
         
-	"""
+	
         Return the indexes of points in cells neighbouring cell at coords.
     	For the cell at coords = (x,y), return the indexes of points in the cells
     	with neighbouring coordinates illustrated below: ie those cells that could 
     	contain points closer than r
-	"""
+	
 
         .. code-block:: python
 
@@ -73,11 +73,11 @@ get_neighbours(coords,nx,ny,cells)
 point_valid(pt,a,nx,ny,cells,samples,r)
 ****************************************
 
-        """
+        
         Returns True or False based on if the pt is valid point to be added to samples.
 	It must be no closer than r from any other point by checking the cells in its
 	immediate neighbourhood.
-        """
+        
 
         .. code-block:: python
 
@@ -122,13 +122,13 @@ point_valid(pt,a,nx,ny,cells,samples,r)
 get_point(k, refpt,r,a,nx,ny,cells,samples)
 *******************************************
 
-        """
+        
 	Try to find a candidate point relative to refpt to emit in the sample.
     	We draw up to k points from the annulus of inner radius r, outer radius 2r
     	around the reference point, refpt. If none of them are suitable (because
     	they're too close to existing points in the sample), return False.
     	Otherwise, return the pt.
-	"""
+	
         
 	.. code-block:: python
 
@@ -178,9 +178,9 @@ get_point(k, refpt,r,a,nx,ny,cells,samples)
 button_callback()
 *****************
 
-        """
+       
         Function that is called when user clicks 'Run' from the GUI
-        """
+       
 
         .. code-block:: python
 
@@ -209,10 +209,10 @@ button_callback()
 create_figure()
 ***************
 
-        """
+        
         Function collects the user choices from the GUI and calls either the generate_stack_montage() for reading in a single image
         or the generate_image_tSNE() for multiplexed images
-        """
+        
 
         .. code-block:: python
 
@@ -239,9 +239,9 @@ create_figure()
 generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)
 **********************************************************
 
-        """
+        
         Function generates a stack montage by using each marker channel of a multiplexed image.
-	"""
+	
 
 	- Generates evenly-spaced points on the static canvas to arrange the images in rows
 	- Reads in the user-provided tSNE
@@ -283,9 +283,9 @@ generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)
 generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)
 *********************************************************************************
 
-        """
+        
         Function generates the image tSNE using the multiplexed images and based on user inputs
-	"""
+	
 
         - Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE
         - Generates thumbnails, and pastes these onto the static canvas
@@ -336,9 +336,9 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)
 draw_tSNE_scatter(tsne1, file_name_hover)
 *******************************************
 
-	"""	
+	
 	Function that generates the image tSNE scatter plots for the Live canvases
-	"""
+
 
 	.. code_block:: python
 

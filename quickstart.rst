@@ -1,5 +1,5 @@
-Quickstart
-==========
+Introduction
+============
 
 What is Mistic
 --------------
