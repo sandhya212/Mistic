@@ -15,6 +15,7 @@ Welcome to Mistic's documentation!
    function_get_cell_coords
    requirements
    install 
+   mistic_exp
    apidocs
 
 Indices and tables
