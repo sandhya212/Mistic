@@ -23,7 +23,9 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
   
 
 * Navigate to the /user_inputs/metadata folder
+
 	* Upload the imaging markers of interest as Markers_ids.csv
+
 		* A sample .csv is provided in the /metadata folder
 
 	* Upload the markers.csv provided by t-CyCIF
