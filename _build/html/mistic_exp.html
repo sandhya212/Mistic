@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5. Mistic experiments &mdash; mistic  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>5. Mistic experiments &mdash; Mistic  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -17,7 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Apidocs" href="apidocs.html" />
+    <link rel="next" title="6. Vignettes on public data" href="vignette_example.html" />
     <link rel="prev" title="4. Code Installation" href="install.html" /> 
 </head>
 
@@ -26,7 +26,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> mistic
+            <a href="index.html" class="icon icon-home"> Mistic
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -38,8 +38,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function_get_cell_coords.html">2. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_flowchart.html">2. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">3. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">4. Code Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. Mistic experiments</a><ul>
@@ -50,7 +50,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#tissue-microarray-cores-for-endometrial-cancer">5.5. Tissue Microarray cores for Endometrial cancer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs.html">6. Apidocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vignette_example.html">6. Vignettes on public data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs.html">7. Apidocs</a></li>
 </ul>
 
         </div>
@@ -59,7 +60,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">mistic</a>
+          <a href="index.html">Mistic</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -87,18 +88,24 @@
 <section id="non-small-cell-lung-cancer">
 <h2>5.2. Non-small cell lung cancer<a class="headerlink" href="#non-small-cell-lung-cancer" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/nsclc_fov.jpg"><img alt="" class="align-center" src="_images/nsclc_fov.jpg" style="width: 600px;" /></a>
+<p>Figure showing Response 1 and Response 2 patients with NSCLC have significantly different cellular compositions. A. 2D t-SNE plot showing three clusters annotated with the differentially expressed markers per cluster. Clusters are obtained using the tumor-immune cell counts at the tumor border where the borders are estimated using convex hulls approximations. B. Same t-SNE as in (A) depicting the disease response spread. C. Image t-SNE using same t-SNE coordinates as in (A) illustrating the gradient of immune cells across images. A higher colocalization of immune cells (shown in green) is seen for Response 1 patients.</p>
 </section>
 <section id="lung-adenocarcinoma-metastasis-to-lymph-node">
 <h2>5.3. Lung adenocarcinoma metastasis to lymph node<a class="headerlink" href="#lung-adenocarcinoma-metastasis-to-lymph-node" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/lung_adeno.jpg"><img alt="" class="align-center" src="_images/lung_adeno.jpg" style="width: 600px;" /></a>
+<p>Figure showing Mistic on the Lung adenocarcinoma lymph t-CyCIF data. The static canvas shows 70 repeats of the Lung t-CyCIF image arranged in rows. Mistic gives the composite image using 6 markers (CD45, Keratin, aSMA, FoXP3, PD-1, PD-L1). The live canvas shows proxy cluster assignments.
+We discuss how to run Mistic on this data here: <a class="reference internal" href="vignette_example.html"><span class="doc">Vignettes on public data</span></a> 6.1.</p>
 </section>
 <section id="primary-lung-squamous-cell-carcinoma">
 <h2>5.4. Primary lung squamous cell carcinoma<a class="headerlink" href="#primary-lung-squamous-cell-carcinoma" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/lung_prim.jpg"><img alt="" class="align-center" src="_images/lung_prim.jpg" style="width: 600px;" /></a>
+<p>Figure showing a Stack Montage from Mistic for the Primary Lung t-CyCIF data with 44 markers. A. The static canvas shows all 44 markers and the live canvas shows the tSNE scatter plot. We identify the Keratin channel using the live canvas (shown with hover tool details) and highlight the Keratin thumbnail in yellow in the static canvas. B. The zoomed in Keratin thumbnail (file name obtained from the hover tool) and C. The t-CyCIF image for Keratin as viewed using Minerva [45]. Minerva provides the single marker views for 12 markers whereas with Mistic we can view all 44 channels as a montage.
+We discuss how to run Mistic on this data here: <a class="reference internal" href="vignette_example.html"><span class="doc">Vignettes on public data</span></a> 6.2.</p>
 </section>
 <section id="tissue-microarray-cores-for-endometrial-cancer">
 <h2>5.5. Tissue Microarray cores for Endometrial cancer<a class="headerlink" href="#tissue-microarray-cores-for-endometrial-cancer" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/tma.jpg"><img alt="" class="align-center" src="_images/tma.jpg" style="width: 600px;" /></a>
+<p>Figure showing A. Image tSNE rendering using Mistic for 210 Tissue Microarray (TMA) cores of Endometrial cancer. Each core depicts plGr on tumor cells (blue), IgA (black), IgG (pink), plasma cells (red), additional B-cells (green) and unstained cells (gray). Each core has a border that matches the cluster it belongs to (see the Cluster annotations live panel). Representative cores from each of the clusters dominated by pIgr, IgA and IgG are shown. B. tSNE scatter plot showing the marker spread computed from the 210x5 count matrix prior to clustering.</p>
 </section>
 </section>
 
@@ -107,7 +114,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="install.html" class="btn btn-neutral float-left" title="4. Code Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="apidocs.html" class="btn btn-neutral float-right" title="6. Apidocs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vignette_example.html" class="btn btn-neutral float-right" title="6. Vignettes on public data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

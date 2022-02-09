@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'mistic'
+project = 'Mistic'
 copyright = '2022, Sandhya Prabhakaran'
 author = 'Sandhya Prabhakaran'
 

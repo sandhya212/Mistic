@@ -7,15 +7,16 @@ Welcome to Mistic's documentation!
 ======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :numbered:
    :caption: Contents:
 
-   quickstart
-   function_get_cell_coords
+   intro
+   function_flowchart
    requirements
    install 
    mistic_exp
+   vignette_example
    apidocs
 
 Indices and tables

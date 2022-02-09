@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Functions &mdash; Mistic  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Requirements" href="requirements.html" />
+    <link rel="prev" title="1. Introduction" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Mistic
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-cell-coords-pt-a">2.1. get_cell_coords(pt,a)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-neighbours-coords-nx-ny-cells">2.2. get_neighbours(coords,nx,ny,cells)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#point-valid-pt-a-nx-ny-cells-samples-r">2.3. point_valid(pt,a,nx,ny,cells,samples,r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-point-k-refpt-r-a-nx-ny-cells-samples">2.4. get_point(k, refpt,r,a,nx,ny,cells,samples)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#button-callback">2.5. button_callback()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-figure">2.6. create_figure()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-stack-montage-chk-box-marker-sm-labels-markers">2.7. generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers">2.8. generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#draw-tsne-scatter-tsne1-file-name-hover">2.9. draw_tSNE_scatter(tsne1, file_name_hover)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">3. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">4. Code Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mistic_exp.html">5. Mistic experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vignette_example.html">6. Code Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs.html">7. Apidocs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Mistic</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>2. Functions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/function_flowchart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="functions">
+<h1>2. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<section id="get-cell-coords-pt-a">
+<h2>2.1. get_cell_coords(pt,a)<a class="headerlink" href="#get-cell-coords-pt-a" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Get the coordinates of the cell that pt = (x,y) falls in.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cell_coords</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">pt</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates of a point</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">:</span> <span class="pre">float</span></code>
+scaled minimum distance between cells</p>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">list</span></code>
+coordinates of the cell that pt lies in</p>
+</div></blockquote>
+</section>
+<section id="get-neighbours-coords-nx-ny-cells">
+<h2>2.2. get_neighbours(coords,nx,ny,cells)<a class="headerlink" href="#get-neighbours-coords-nx-ny-cells" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Return the indexes of points in cells neighbouring cell at coords.
+For the cell at coords = (x,y), return the indexes of points in the cells
+with neighbouring coordinates illustrated below: ie those cells that could
+contain points closer than r</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_neighbours</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">cells</span><span class="p">):</span>
+    <span class="c1"># Refer main.py on Github</span>
+     <span class="k">return</span> <span class="n">neighbours</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">coords</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates of a point</p>
+<p><code class="docutils literal notranslate"><span class="pre">nx,</span> <span class="pre">ny</span> <span class="pre">:</span> <span class="pre">int</span></code>
+Number of cells in the x- and y-directions of the grid</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">cells</span> <span class="pre">:</span> <span class="pre">dictionary</span></code></dt><dd><p>Dictionary of cells or grid squares: each key is a cell’s coordinates, the
+corresponding value is the index of that cell’s point’s coordinates in the
+samples list (or None if the cell is empty)</p>
+</dd>
+</dl>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">neighbours:</span> <span class="pre">list</span></code>
+List of neighbouring cells for coords</p>
+</div></blockquote>
+</section>
+<section id="point-valid-pt-a-nx-ny-cells-samples-r">
+<h2>2.3. point_valid(pt,a,nx,ny,cells,samples,r)<a class="headerlink" href="#point-valid-pt-a-nx-ny-cells-samples-r" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Returns True or False based on if the pt is valid point to be added to samples.
+It must be no closer than r from any other point by checking the cells in its
+immediate neighbourhood.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">point_valid</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span><span class="n">samples</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
+    <span class="c1"># Refer main.py on Github</span>
+     <span class="k">return</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">pt</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates of a point</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">:</span> <span class="pre">float</span></code>
+scaled minimum distance between cells</p>
+<p><code class="docutils literal notranslate"><span class="pre">nx,</span> <span class="pre">ny</span> <span class="pre">:</span> <span class="pre">int</span></code>
+Number of cells in the x- and y-directions of the grid</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">cells</span> <span class="pre">:</span> <span class="pre">dictionary</span></code></dt><dd><p>Dictionary of cells or grid squares: each key is a cell’s coordinates, the
+corresponding value is the index of that cell’s point’s coordinates in the
+samples list (or None if the cell is empty)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">samples</span> <span class="pre">:</span> <span class="pre">list</span></code></dt><dd><p>List with valid neighbouring coordinates for a given point pt</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">:</span> <span class="pre">int</span></code>
+Minimum distance between samples. Set to 2</p>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">boolean</span></code>
+Returns True or False if sampled point is eligible to be pt’s neighbour</p>
+</div></blockquote>
+</section>
+<section id="get-point-k-refpt-r-a-nx-ny-cells-samples">
+<h2>2.4. get_point(k, refpt,r,a,nx,ny,cells,samples)<a class="headerlink" href="#get-point-k-refpt-r-a-nx-ny-cells-samples" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Try to find a candidate point relative to refpt to emit in the sample.
+We draw up to k points from the annulus of inner radius r, outer radius 2r
+around the reference point, refpt. If none of them are suitable (because
+they’re too close to existing points in the sample), return False.
+Otherwise, return the pt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_point</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">refpt</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span><span class="n">samples</span><span class="p">):</span>
+     <span class="c1"># Refer main.py on Github</span>
+     <span class="k">return</span> <span class="kc">True</span> <span class="p">(</span><span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">:</span> <span class="pre">int</span></code>
+number of candidate points sampled arounf the reference point, refpt</p>
+<p><code class="docutils literal notranslate"><span class="pre">refpt</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates of the reference point</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">:</span> <span class="pre">float</span></code>
+scaled minimum distance between cells</p>
+<p><code class="docutils literal notranslate"><span class="pre">nx,</span> <span class="pre">ny</span> <span class="pre">:</span> <span class="pre">int</span></code>
+Number of cells in the x- and y-directions of the grid</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">cells</span> <span class="pre">:</span> <span class="pre">dictionary</span></code></dt><dd><p>Dictionary of cells or grid squares: each key is a cell’s coordinates, the
+corresponding value is the index of that cell’s point’s coordinates in the
+samples list (or None if the cell is empty)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">samples</span> <span class="pre">:</span> <span class="pre">list</span></code></dt><dd><p>List with valid neighbouring coordinates for a given point pt</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">:</span> <span class="pre">int</span></code>
+Minimum distance between samples. Set to 2</p>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">boolean</span></code>
+Returns True or False if candidate point is eligible to be refpt’s neighbour</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above functions: <code class="docutils literal notranslate"><span class="pre">get_cell_coords()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_neighbours()</span></code>, <code class="docutils literal notranslate"><span class="pre">point_valid()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_point()</span></code> are modified from
+<a class="reference external" href="https://scipython.com/blog/poisson-disc-sampling-in-python/">https://scipython.com/blog/poisson-disc-sampling-in-python/</a></p>
+</div>
+</section>
+<section id="button-callback">
+<h2>2.5. button_callback()<a class="headerlink" href="#button-callback" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Function that is called when user clicks ‘Run’ from the GUI</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">button</span><span class="o">-</span><span class="n">callback</span><span class="p">():</span>
+     <span class="c1"># Refer main.py on Github</span>
+     <span class="k">return</span> <span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">p4</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">tabs</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">:</span> <span class="pre">figure</span></code>
+Static figure canvas with the image tSNE</p>
+<p><code class="docutils literal notranslate"><span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4</span> <span class="pre">:</span> <span class="pre">figure</span></code>
+Live canvas with tSNE scatter plots for each of the image metadata</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">:</span> <span class="pre">ColumnDataSource,</span> <span class="pre">dictionary</span></code>
+Dictionary of metadata and associated variables (like colour, thumbnail location) for each image which is maintained and
+updated based on user preferences for each ‘Run’ episode</p>
+<p><code class="docutils literal notranslate"><span class="pre">tabs</span> <span class="pre">:</span> <span class="pre">Tabs</span></code>
+Tabs of Panels where each panel corresponds to an image metadata</p>
+</div></blockquote>
+</section>
+<section id="create-figure">
+<h2>2.6. create_figure()<a class="headerlink" href="#create-figure" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Function collects the user choices from the GUI and calls either the generate_stack_montage() for reading in a single image
+or the generate_image_tSNE() for multiplexed images</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_figure</span><span class="p">():</span>
+     <span class="c1"># Refer main.py on Github</span>
+     <span class="k">return</span> <span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">tsne_points</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">:</span> <span class="pre">figure</span></code>
+Static figure canvas with the image tSNE</p>
+<p><code class="docutils literal notranslate"><span class="pre">tsne_points</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates for each image where coordinates can be randomly generated/arranged in rows/user defined.
+The coordinates are generated based on number of images and size (length and breadth) of the static canvas</p>
+<p><code class="docutils literal notranslate"><span class="pre">file_name_hover</span> <span class="pre">:</span> <span class="pre">str</span></code>
+file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
+</div></blockquote>
+</section>
+<section id="generate-stack-montage-chk-box-marker-sm-labels-markers">
+<h2>2.7. generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)<a class="headerlink" href="#generate-stack-montage-chk-box-marker-sm-labels-markers" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Function generates a stack montage by using each marker channel of a multiplexed image.</p>
+<ul class="simple">
+<li><p>Generates evenly-spaced points on the static canvas to arrange the images in rows</p></li>
+<li><p>Reads in the user-provided tSNE</p></li>
+<li><p>Generates thumbnails, and pastes these onto the static canvas</p></li>
+<li><p>Stores the thumbnails in the output folder</p></li>
+<li><p>Updates the hover tool with thumbnail paths, marker names and metadata</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_stack_montage</span><span class="p">(</span><span class="n">chk_box_marker_sm</span><span class="p">,</span> <span class="n">LABELS_MARKERS</span><span class="p">):</span>
+     <span class="c1"># Refer main.py on Github</span>
+     <span class="k">return</span><span class="p">([</span><span class="n">file_name_rot</span><span class="p">,</span><span class="n">tsne</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">chk_box_marker_sm</span> <span class="pre">:</span> <span class="pre">int</span></code>
+If checkbox is checked by user on the GUI, chk_box_marker_sm = 1 indicating that the stack montage option is selected.
+If checkbox is unchecked, the multiple image tSNE generation process proceeds based on markers chosen by the user using the GUI</p>
+<p><code class="docutils literal notranslate"><span class="pre">LABELS_MARKERS</span> <span class="pre">:</span> <span class="pre">list</span></code>
+List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.
+User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE</p>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">file_name_rot</span> <span class="pre">:</span> <span class="pre">str</span></code>
+file name with path where the final image with thumbnails is located</p>
+<p><code class="docutils literal notranslate"><span class="pre">tsne</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates for each image to be rendered in rows.
+The coordinates are generated based on number of images and size (length and breadth) of the static canvas</p>
+<p><code class="docutils literal notranslate"><span class="pre">file_name_hover</span> <span class="pre">:</span> <span class="pre">str</span></code>
+file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
+</div></blockquote>
+</section>
+<section id="generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers">
+<h2>2.8. generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)<a class="headerlink" href="#generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Function generates the image tSNE using the multiplexed images and based on user inputs</p>
+<ul class="simple">
+<li><p>Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE</p></li>
+<li><p>Generates thumbnails, and pastes these onto the static canvas</p></li>
+<li><p>Stores the thumbnails in the output folder</p></li>
+<li><p>Updates the hover tool with thumbnail paths, marker names and metadata</p></li>
+<li><p>shuffle or no shuffle option is handled in this function where images are randomly shuffled</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_image_tSNE</span><span class="p">(</span><span class="n">chk_box_marker</span><span class="p">,</span><span class="n">rb_val</span><span class="p">,</span><span class="n">rb_rs_val</span><span class="p">,</span><span class="n">rb_shf_val</span><span class="p">,</span> <span class="n">LABELS_MARKERS</span><span class="p">):</span>
+     <span class="c1"># Refer main.py() on Github</span>
+     <span class="k">return</span><span class="p">([</span><span class="n">file_name_rot</span><span class="p">,</span><span class="n">tsne</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">chk_box_marker</span> <span class="pre">:</span> <span class="pre">int</span></code>
+If checkbox is checked by user on the GUI, chk_box_marker = 1 and the user-selected markers are collected by this variable</p>
+<p><code class="docutils literal notranslate"><span class="pre">rb_val</span> <span class="pre">:</span> <span class="pre">str</span></code>
+Choice of having a border for each image based on image metadata. If ‘No’ is chosen, no border is set for images</p>
+<p><code class="docutils literal notranslate"><span class="pre">rb_rs_val</span> <span class="pre">:</span> <span class="pre">str</span></code>
+Choice to create a tSNE based on user-defined points, random coordinates or stack the images in rows</p>
+<p><code class="docutils literal notranslate"><span class="pre">rb_shf_val</span> <span class="pre">:</span> <span class="pre">str</span></code>
+Choice to shuffle images (‘Yes’) or not (‘No’) while rendering the images on the static canvas</p>
+<p><code class="docutils literal notranslate"><span class="pre">LABELS_MARKERS</span> <span class="pre">:</span> <span class="pre">list</span></code>
+List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.
+User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE</p>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">file_name_rot</span> <span class="pre">:</span> <span class="pre">str</span></code>
+file name with path where the final image with thumbnails is located</p>
+<p><code class="docutils literal notranslate"><span class="pre">tsne</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates for each image where coordinates can be random/arrnaged in rows/user defined.
+The coordinates are generated based on number of images and size (length and breadth) of the static canvas</p>
+<p><code class="docutils literal notranslate"><span class="pre">file_name_hover</span> <span class="pre">:</span> <span class="pre">str</span></code>
+file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
+</div></blockquote>
+</section>
+<section id="draw-tsne-scatter-tsne1-file-name-hover">
+<h2>2.9. draw_tSNE_scatter(tsne1, file_name_hover)<a class="headerlink" href="#draw-tsne-scatter-tsne1-file-name-hover" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Function that generates the image tSNE scatter plots for the Live canvases</p>
+<p><strong>Parameters</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">tsne1</span> <span class="pre">:</span> <span class="pre">float</span></code>
+2D coordinates for each image where coordinates can be randomly generated/arranged in rows/user defined.
+The coordinates are generated based on number of images and size (length and breadth) of the static canvas</p>
+<p><code class="docutils literal notranslate"><span class="pre">file_name_hover</span> <span class="pre">:</span> <span class="pre">str</span></code>
+file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
+<p><strong>Output</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4</span> <span class="pre">:</span> <span class="pre">figure</span></code>
+Live canvas with tSNE scatter plots for each of the image metadata</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">:</span> <span class="pre">ColumnDataSource,</span> <span class="pre">dictionary</span></code>
+Dictionary of metadata and associated variables (like colour, thumbnail location) for each image which is maintained and
+updated based on user preferences for each ‘Run’ episode</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="requirements.html" class="btn btn-neutral float-right" title="3. Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Sandhya Prabhakaran.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
