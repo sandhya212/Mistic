@@ -1,6 +1,17 @@
 Functions
 =========
 
+
+.. image:: figures/flowchart_mistic.jpg
+   :width: 700
+   :alt: Table
+
+..
+
+..
+
+Flowchart sketching flow between functions and processes in Mistic.
+
 get_cell_coords(pt,a)
 *********************
 
