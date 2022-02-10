@@ -11,6 +11,7 @@ Functions
 ..
 
 Flowchart sketching flow between functions and processes in Mistic.
+(SM = Stack montage, Y = Yes, N = No)
 
 get_cell_coords(pt,a)
 *********************
