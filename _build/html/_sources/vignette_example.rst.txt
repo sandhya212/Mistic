@@ -5,7 +5,7 @@ We provide example vignettes to help users run Mistic. Check out our :doc:`misti
 
 t-CyCIF image on Lung adenocarcinoma metastasis to lymph node
 *************************************************************
-This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9666, and has 44 marker channels. To simultaneously test Mistic for scalability, we created duplicates of this image. In :doc:`mistic_exp` 5.3, we use 40 duplicates of this image and render it on Mistic for 6 markers: CD45, Keratin, aSMA, FoXP3, PD-1, PD-L1.
+This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9666, and has 44 marker channels. To simultaneously test Mistic for scalability, we created duplicates of this image. In :doc:`mistic_exp` 5.3, we use 70 duplicates of this image and render it on Mistic for 6 markers: CD45, Keratin, aSMA, FoXP3, PD-1, PD-L1.
 
 * Download Mistic as described here :doc:`install`
 
@@ -23,7 +23,9 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
   
 
 * Navigate to the /user_inputs/metadata folder
+
 	* Upload the imaging markers of interest as Markers_ids.csv
+
 		* A sample .csv is provided in the /metadata folder
 
 	* Upload the markers.csv provided by t-CyCIF
@@ -35,7 +37,9 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
   	* Optional uploads: 
     
    		 * Image tSNE co-ordinates as X_imagetSNE.csv
-    
+   
+			* If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of random coordinates to render the images
+ 
     		 * Cluster labels as Cluster_categories.csv
       
       		 * Patient_ids as Patient_ids.csv
@@ -43,7 +47,9 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
    	         * Treatments as Treatment_catgories.csv
       
                  * Patient response as Response_categories.csv 
-    
+
+		 * If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray, for the live panels. 
+     
     	* Sample metadata files are provided for reference in the /metadata folder 
 
 * Open a command prompt (or the Terminal application), change to the directory containing /code and type

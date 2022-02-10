@@ -80,7 +80,7 @@
 <p>We provide example vignettes to help users run Mistic. Check out our <a class="reference internal" href="mistic_exp.html"><span class="doc">Mistic experiments</span></a> page for examples Mistic has been tested on and <a class="reference internal" href="function_flowchart.html"><span class="doc">Functions</span></a> for a full list of functions Mistic uses.</p>
 <section id="t-cycif-image-on-lung-adenocarcinoma-metastasis-to-lymph-node">
 <h2>6.1. t-CyCIF image on Lung adenocarcinoma metastasis to lymph node<a class="headerlink" href="#t-cycif-image-on-lung-adenocarcinoma-metastasis-to-lymph-node" title="Permalink to this headline">¶</a></h2>
-<p>This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9666, and has 44 marker channels. To simultaneously test Mistic for scalability, we created duplicates of this image. In <a class="reference internal" href="mistic_exp.html"><span class="doc">Mistic experiments</span></a> 5.3, we use 40 duplicates of this image and render it on Mistic for 6 markers: CD45, Keratin, aSMA, FoXP3, PD-1, PD-L1.</p>
+<p>This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9666, and has 44 marker channels. To simultaneously test Mistic for scalability, we created duplicates of this image. In <a class="reference internal" href="mistic_exp.html"><span class="doc">Mistic experiments</span></a> 5.3, we use 70 duplicates of this image and render it on Mistic for 6 markers: CD45, Keratin, aSMA, FoXP3, PD-1, PD-L1.</p>
 <ul>
 <li><p>Download Mistic as described here <a class="reference internal" href="install.html"><span class="doc">Code Installation</span></a></p>
 <blockquote>
@@ -99,14 +99,15 @@
 </ul>
 </div></blockquote>
 </li>
-<li><dl>
-<dt>Navigate to the /user_inputs/metadata folder</dt><dd><ul>
-<li><dl class="simple">
-<dt>Upload the imaging markers of interest as Markers_ids.csv</dt><dd><ul class="simple">
+<li><p>Navigate to the /user_inputs/metadata folder</p>
+<blockquote>
+<div><ul>
+<li><p>Upload the imaging markers of interest as Markers_ids.csv</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>A sample .csv is provided in the /metadata folder</p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 <li><p>Upload the markers.csv provided by t-CyCIF</p>
 <blockquote>
@@ -118,19 +119,25 @@
 </li>
 <li><p>Optional uploads:</p>
 <blockquote>
+<div><ul>
+<li><p>Image tSNE co-ordinates as X_imagetSNE.csv</p>
+<blockquote>
 <div><ul class="simple">
-<li><p>Image tSNE co-ordinates as X_imagetSNE.csv</p></li>
+<li><p>If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of random coordinates to render the images</p></li>
+</ul>
+</div></blockquote>
+</li>
 <li><p>Cluster labels as Cluster_categories.csv</p></li>
 <li><p>Patient_ids as Patient_ids.csv</p></li>
 <li><p>Treatments as Treatment_catgories.csv</p></li>
 <li><p>Patient response as Response_categories.csv</p></li>
+<li><p>If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray, for the live panels.</p></li>
 </ul>
 </div></blockquote>
 </li>
 <li><p>Sample metadata files are provided for reference in the /metadata folder</p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 <li><p>Open a command prompt (or the Terminal application), change to the directory containing /code and type</p>
 <blockquote>
