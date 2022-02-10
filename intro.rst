@@ -32,8 +32,7 @@ Motivation behind developing Mistic
 
 * This exploratory understanding will also enable viewing a specific marker expression pattern across all images, helps to identify images expressing a particular phenotype or to select images for subsequent downstream analysis. 
 
-* Mistic aims to fill this gap as there are currently there is no freely available tool providing this functionality.
-
+* Mistic aims to fill this gap as there are currently no freely available tools providing this functionality.
 
 Mistic features
 ---------------------
