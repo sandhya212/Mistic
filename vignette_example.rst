@@ -58,7 +58,7 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
    * ``bokeh serve --port 5098 --show image_tSNE_GUI``
    * This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at http://localhost:5098/image_tSNE_GUI
 
-* From the GUI, select markers and other options based on image metadata (for example, border, image layout) and click 'Run'
+* From the GUI, choose 't-CyCIF' from the dropdown menu, check the boxes for markers of interest and select other options based on image metadata (for example, border, image layout) and click 'Run'
 
 
 t-CyCIF image on Primary lung squamous cell carcinoma
@@ -94,5 +94,5 @@ This is an example where Mistic can be used to view a stack montage made up of t
    * ``bokeh serve --port 5098 --show image_tSNE_GUI``
    * This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at http://localhost:5098/image_tSNE_GUI
 
-* From the GUI, select the 'Stack montage' option and click 'Run'
+* From the GUI, choose 't-CyCIF' from the dropdown menu, select the 'Stack montage' option and click 'Run'
 

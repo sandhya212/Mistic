@@ -4,11 +4,11 @@ Introduction
 What is Mistic
 --------------
 This is a Python tool using the Bokeh library to view multiple multiplex images simultaneously.
-The code has been tested on 7-panel Vectra, 32-panel CODEX and 44-panel t-CyCIF images.
+The code has been tested on 7-panel Vectra, 32- & 64-panel CODEX and 44-panel t-CyCIF images.
 
 .. image:: figures/Mistic_GUI.jpg
   :width: 600
-  :alt: Mistic GUI.A. User-input panel where imaging technique choice, stack montage option or markers can be selected, images borders can be added, new or pre-defined image display coordinates
+  :alt: Mistic GUI. A. User-input panel where imaging technique choice, stack montage option or markers can be selected, images borders can be added, new or pre-defined image display coordinates
         can be chosen, and a theme for the canvases can be selected. B. Static canvas showing the image t-SNE colored and arranged as per user inputs.
         C. Live canvas showing the corresponding t-SNE scatter plot where each image is represented as a dot.
         The live canvas has tabs for displaying additional information per image.
@@ -18,8 +18,7 @@ The code has been tested on 7-panel Vectra, 32-panel CODEX and 44-panel t-CyCIF 
  
 ..
 
-A sample Mistic GUI with user inputs is shown. a. User-input panel where markers can be selected, images borders can be added, new or pre-defined image display coordinates can be         chosen, and a theme for the canvases can be selected. b. Static canvas showing the image t-SNE colored and arranged as per user inputs. c. Live canvas showing the corresponding t-        SNE scatter plot where each image is represented as a dot. The live canvas has tabs for displaying additional information per image. Metadata for each image can be obtained by hovering over each dot.
-
+A sample Mistic GUI with user inputs is shown. A. User-input panel where imaging technique choice, stack montage option or markers can be selected, images borders can be added, new or pre-defined image display coordinates can be chosen, and a theme for the canvases can be selected. B. Static canvas showing the image t-SNE colored and arranged as per user inputs. C. Live canvas showing the corresponding t-SNE scatter plot where each image is represented as a dot. The live canvas has tabs for displaying additional information per image. Metadata for each image can be obtained by hovering over each dot.
 
 Motivation behind developing Mistic
 -----------------------------------
