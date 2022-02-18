@@ -347,9 +347,6 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val, rb_shf_val,rb_imtech_val,mc
 	``wc : list``
 	List of weights for all markers shown on GUI
 
-        ``rb_imtech_val : int``
-        If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked
-
         ``LABELS_MARKERS : list``
         List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.
         User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE
