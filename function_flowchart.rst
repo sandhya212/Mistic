@@ -71,7 +71,7 @@ get_neighbours(coords,nx,ny,cells)
 
 	``cells : dictionary``
          Dictionary of cells or grid squares: each key is a cell's coordinates, the
-         corresponding value is the index of that cell's point's coordinates in the
+         corresponding value is the index of that cell's coordinates in the
          samples list (or None if the cell is empty)
 
         **Output**
@@ -86,7 +86,7 @@ point_valid(pt,a,nx,ny,cells,samples,r)
 ****************************************
 
         
-        Returns True or False based on if the pt is valid point to be added to samples.
+        Returns True or False based on if the pt is a valid point to be added to samples.
 	It must be no closer than r from any other point by checking the cells in its
 	immediate neighbourhood.
         
@@ -112,7 +112,7 @@ point_valid(pt,a,nx,ny,cells,samples,r)
 
         ``cells : dictionary``
          Dictionary of cells or grid squares: each key is a cell's coordinates, the
-         corresponding value is the index of that cell's point's coordinates in the
+         corresponding value is the index of that cell's coordinates in the
          samples list (or None if the cell is empty)
 
 
@@ -166,7 +166,7 @@ get_point(k, refpt,r,a,nx,ny,cells,samples)
 
         ``cells : dictionary``
          Dictionary of cells or grid squares: each key is a cell's coordinates, the
-         corresponding value is the index of that cell's point's coordinates in the
+         corresponding value is the index of that cell's coordinates in the
          samples list (or None if the cell is empty)
 
 
@@ -196,7 +196,7 @@ button_callback()
 
         .. code-block:: python
 
-                def button-callback():
+                def button_callback():
                      # Refer main.py on Github
                      return ([p,p1,p2,p3,p4, source, tabs])
 
@@ -218,8 +218,8 @@ button_callback()
 
 
 
-create_figure()
-***************
+create_figure(stack_montage_flag)
+*********************************
 
         
         Function collects the user choices from the GUI and calls either the generate_stack_montage() for reading in a single image
@@ -228,9 +228,14 @@ create_figure()
 
         .. code-block:: python
 
-                def create_figure():
+                def create_figure(stack_montage_flag):
                      # Refer main.py on Github
-                     return ([p,tsne_points, file_name_hover])
+                     return ([p,tsne_points, file_name_hover,markers_single, cluster_ms_list])
+
+        **Parameters:**
+
+        ``stack_montage_flag : bool``
+	If True, the generate_stack_montage() is called, else the generate_image_tsne() is called.
 
         **Output**
 
@@ -244,19 +249,22 @@ create_figure()
         ``file_name_hover : str``
         file name with path to populate the 'thumbnail' entry in the Hover tool
 
+	``markers_single : list``
+	list of markers selected by the user
+
+	``cluster_ms_list : list``
+	list of channel names necessary to populate the hover tool in the live panels
 
 
 
-
-generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)
-**********************************************************
+generate_stack_montage(chk_box_marker_sm, rb_imtech_val, LABELS_MARKERS)
+*************************************************************************
 
         
         Function generates a stack montage by using each marker channel of a multiplexed image.
 	
-
+	- Reads in and processes the image channels 
 	- Generates evenly-spaced points on the static canvas to arrange the images in rows
-	- Reads in the user-provided tSNE
 	- Generates thumbnails, and pastes these onto the static canvas
 	- Stores the thumbnails in the output folder
 	- Updates the hover tool with thumbnail paths, marker names and metadata
@@ -264,7 +272,7 @@ generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)
 
         .. code-block:: python
 
-                def generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS):
+                def generate_stack_montage(chk_box_marker_sm, rb_imtech_val, LABELS_MARKERS):
 		     # Refer main.py on Github
                      return([file_name_rot,tsne, file_name_hover])
 
@@ -279,6 +287,9 @@ generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)
         List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv. 
 	User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE
 
+	``rb_imtech_val : int``
+	If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked
+
         **Output**
 
 	``file_name_rot : str``
@@ -292,13 +303,13 @@ generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)
 	file name with path to populate the 'thumbnail' entry in the Hover tool
 
 
-generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)
-*********************************************************************************
+generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val, rb_shf_val,rb_imtech_val,mc,wc,LABELS_MARKERS)
+****************************************************************************************************
 
         
         Function generates the image tSNE using the multiplexed images and based on user inputs
 	
-
+	- reads in and pre-processes the images
         - Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE
         - Generates thumbnails, and pastes these onto the static canvas
         - Stores the thumbnails in the output folder
@@ -308,7 +319,7 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)
 
         .. code-block:: python
 
-                def generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS):
+                def generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val,rb_imtech_val,mc,wc LABELS_MARKERS):
 		     # Refer main.py() on Github
                      return([file_name_rot,tsne, file_name_hover])
 
@@ -327,6 +338,18 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)
 	``rb_shf_val : str``
 	Choice to shuffle images ('Yes') or not ('No') while rendering the images on the static canvas
  
+        ``rb_imtech_val : int``
+        If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked
+
+        ``mc : list``
+        List of all markers available as shown on GUI
+
+	``wc : list``
+	List of weights for all markers shown on GUI
+
+        ``rb_imtech_val : int``
+        If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked
+
         ``LABELS_MARKERS : list``
         List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.
         User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE
@@ -345,8 +368,8 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)
 
 
 
-draw_tSNE_scatter(tsne1, file_name_hover)
-*******************************************
+draw_tSNE_scatter(tsne1,file_name_hover,cluster_ms_list)
+*********************************************************
 
 	
 	Function that generates the image tSNE scatter plots for the Live canvases
@@ -354,7 +377,7 @@ draw_tSNE_scatter(tsne1, file_name_hover)
 
 	.. code_block:: python
 
-		def draw_tSNE_scatter(tsne1, file_name_hover):
+		def draw_tSNE_scatter(tsne1, file_name_hover, cluster_ms_list):
 	             # refer main.py on Github
 		     return ([p1,p2,p3,p4, source])
 
@@ -366,6 +389,9 @@ draw_tSNE_scatter(tsne1, file_name_hover)
 
         ``file_name_hover : str``
         file name with path to populate the 'thumbnail' entry in the Hover tool
+
+        ``cluster_ms_list : list``
+        list of channel names necessary to populate the hover tool in the live panels
 
 	**Output**	
 	

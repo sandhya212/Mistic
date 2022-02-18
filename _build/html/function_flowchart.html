@@ -45,17 +45,18 @@
 <li class="toctree-l2"><a class="reference internal" href="#point-valid-pt-a-nx-ny-cells-samples-r">2.3. point_valid(pt,a,nx,ny,cells,samples,r)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-point-k-refpt-r-a-nx-ny-cells-samples">2.4. get_point(k, refpt,r,a,nx,ny,cells,samples)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#button-callback">2.5. button_callback()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#create-figure">2.6. create_figure()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-stack-montage-chk-box-marker-sm-labels-markers">2.7. generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers">2.8. generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#draw-tsne-scatter-tsne1-file-name-hover">2.9. draw_tSNE_scatter(tsne1, file_name_hover)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-figure-stack-montage-flag">2.6. create_figure(stack_montage_flag)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-stack-montage-chk-box-marker-sm-rb-imtech-val-labels-markers">2.7. generate_stack_montage(chk_box_marker_sm, rb_imtech_val, LABELS_MARKERS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-rb-imtech-val-mc-wc-labels-markers">2.8. generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val, rb_shf_val,rb_imtech_val,mc,wc,LABELS_MARKERS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#draw-tsne-scatter-tsne1-file-name-hover-cluster-ms-list">2.9. draw_tSNE_scatter(tsne1,file_name_hover,cluster_ms_list)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">3. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">4. Code Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mistic_exp.html">5. Mistic experiments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vignette_example.html">6. Vignettes on public data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs.html">7. Apidocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vignette_example_tcycif.html">6. Vignettes on t-CyCIF data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vignette_example_vectra.html">7. Vignettes on Vectra data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs.html">8. Apidocs</a></li>
 </ul>
 
         </div>
@@ -124,7 +125,7 @@ contain points closer than r</p>
 Number of cells in the x- and y-directions of the grid</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">cells</span> <span class="pre">:</span> <span class="pre">dictionary</span></code></dt><dd><p>Dictionary of cells or grid squares: each key is a cell’s coordinates, the
-corresponding value is the index of that cell’s point’s coordinates in the
+corresponding value is the index of that cell’s coordinates in the
 samples list (or None if the cell is empty)</p>
 </dd>
 </dl>
@@ -136,7 +137,7 @@ List of neighbouring cells for coords</p>
 <section id="point-valid-pt-a-nx-ny-cells-samples-r">
 <h2>2.3. point_valid(pt,a,nx,ny,cells,samples,r)<a class="headerlink" href="#point-valid-pt-a-nx-ny-cells-samples-r" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Returns True or False based on if the pt is valid point to be added to samples.
+<div><p>Returns True or False based on if the pt is a valid point to be added to samples.
 It must be no closer than r from any other point by checking the cells in its
 immediate neighbourhood.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">point_valid</span><span class="p">(</span><span class="n">pt</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">cells</span><span class="p">,</span><span class="n">samples</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>
@@ -153,7 +154,7 @@ scaled minimum distance between cells</p>
 Number of cells in the x- and y-directions of the grid</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">cells</span> <span class="pre">:</span> <span class="pre">dictionary</span></code></dt><dd><p>Dictionary of cells or grid squares: each key is a cell’s coordinates, the
-corresponding value is the index of that cell’s point’s coordinates in the
+corresponding value is the index of that cell’s coordinates in the
 samples list (or None if the cell is empty)</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">samples</span> <span class="pre">:</span> <span class="pre">list</span></code></dt><dd><p>List with valid neighbouring coordinates for a given point pt</p>
@@ -190,7 +191,7 @@ scaled minimum distance between cells</p>
 Number of cells in the x- and y-directions of the grid</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">cells</span> <span class="pre">:</span> <span class="pre">dictionary</span></code></dt><dd><p>Dictionary of cells or grid squares: each key is a cell’s coordinates, the
-corresponding value is the index of that cell’s point’s coordinates in the
+corresponding value is the index of that cell’s coordinates in the
 samples list (or None if the cell is empty)</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">samples</span> <span class="pre">:</span> <span class="pre">list</span></code></dt><dd><p>List with valid neighbouring coordinates for a given point pt</p>
@@ -212,7 +213,7 @@ Returns True or False if candidate point is eligible to be refpt’s neighbour</
 <h2>2.5. button_callback()<a class="headerlink" href="#button-callback" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Function that is called when user clicks ‘Run’ from the GUI</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">button</span><span class="o">-</span><span class="n">callback</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">button_callback</span><span class="p">():</span>
      <span class="c1"># Refer main.py on Github</span>
      <span class="k">return</span> <span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">p4</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">tabs</span><span class="p">])</span>
 </pre></div>
@@ -229,16 +230,19 @@ updated based on user preferences for each ‘Run’ episode</p>
 Tabs of Panels where each panel corresponds to an image metadata</p>
 </div></blockquote>
 </section>
-<section id="create-figure">
-<h2>2.6. create_figure()<a class="headerlink" href="#create-figure" title="Permalink to this headline">¶</a></h2>
+<section id="create-figure-stack-montage-flag">
+<h2>2.6. create_figure(stack_montage_flag)<a class="headerlink" href="#create-figure-stack-montage-flag" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Function collects the user choices from the GUI and calls either the generate_stack_montage() for reading in a single image
 or the generate_image_tSNE() for multiplexed images</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_figure</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_figure</span><span class="p">(</span><span class="n">stack_montage_flag</span><span class="p">):</span>
      <span class="c1"># Refer main.py on Github</span>
-     <span class="k">return</span> <span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">tsne_points</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">])</span>
+     <span class="k">return</span> <span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">tsne_points</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">,</span><span class="n">markers_single</span><span class="p">,</span> <span class="n">cluster_ms_list</span><span class="p">])</span>
 </pre></div>
 </div>
+<p><strong>Parameters:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">stack_montage_flag</span> <span class="pre">:</span> <span class="pre">bool</span></code>
+If True, the generate_stack_montage() is called, else the generate_image_tsne() is called.</p>
 <p><strong>Output</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">:</span> <span class="pre">figure</span></code>
 Static figure canvas with the image tSNE</p>
@@ -247,20 +251,24 @@ Static figure canvas with the image tSNE</p>
 The coordinates are generated based on number of images and size (length and breadth) of the static canvas</p>
 <p><code class="docutils literal notranslate"><span class="pre">file_name_hover</span> <span class="pre">:</span> <span class="pre">str</span></code>
 file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
+<p><code class="docutils literal notranslate"><span class="pre">markers_single</span> <span class="pre">:</span> <span class="pre">list</span></code>
+list of markers selected by the user</p>
+<p><code class="docutils literal notranslate"><span class="pre">cluster_ms_list</span> <span class="pre">:</span> <span class="pre">list</span></code>
+list of channel names necessary to populate the hover tool in the live panels</p>
 </div></blockquote>
 </section>
-<section id="generate-stack-montage-chk-box-marker-sm-labels-markers">
-<h2>2.7. generate_stack_montage(chk_box_marker_sm, LABELS_MARKERS)<a class="headerlink" href="#generate-stack-montage-chk-box-marker-sm-labels-markers" title="Permalink to this headline">¶</a></h2>
+<section id="generate-stack-montage-chk-box-marker-sm-rb-imtech-val-labels-markers">
+<h2>2.7. generate_stack_montage(chk_box_marker_sm, rb_imtech_val, LABELS_MARKERS)<a class="headerlink" href="#generate-stack-montage-chk-box-marker-sm-rb-imtech-val-labels-markers" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Function generates a stack montage by using each marker channel of a multiplexed image.</p>
 <ul class="simple">
+<li><p>Reads in and processes the image channels</p></li>
 <li><p>Generates evenly-spaced points on the static canvas to arrange the images in rows</p></li>
-<li><p>Reads in the user-provided tSNE</p></li>
 <li><p>Generates thumbnails, and pastes these onto the static canvas</p></li>
 <li><p>Stores the thumbnails in the output folder</p></li>
 <li><p>Updates the hover tool with thumbnail paths, marker names and metadata</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_stack_montage</span><span class="p">(</span><span class="n">chk_box_marker_sm</span><span class="p">,</span> <span class="n">LABELS_MARKERS</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_stack_montage</span><span class="p">(</span><span class="n">chk_box_marker_sm</span><span class="p">,</span> <span class="n">rb_imtech_val</span><span class="p">,</span> <span class="n">LABELS_MARKERS</span><span class="p">):</span>
      <span class="c1"># Refer main.py on Github</span>
      <span class="k">return</span><span class="p">([</span><span class="n">file_name_rot</span><span class="p">,</span><span class="n">tsne</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">])</span>
 </pre></div>
@@ -272,6 +280,8 @@ If checkbox is unchecked, the multiple image tSNE generation process proceeds ba
 <p><code class="docutils literal notranslate"><span class="pre">LABELS_MARKERS</span> <span class="pre">:</span> <span class="pre">list</span></code>
 List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.
 User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE</p>
+<p><code class="docutils literal notranslate"><span class="pre">rb_imtech_val</span> <span class="pre">:</span> <span class="pre">int</span></code>
+If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked</p>
 <p><strong>Output</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">file_name_rot</span> <span class="pre">:</span> <span class="pre">str</span></code>
 file name with path where the final image with thumbnails is located</p>
@@ -282,18 +292,19 @@ The coordinates are generated based on number of images and size (length and bre
 file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
 </div></blockquote>
 </section>
-<section id="generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers">
-<h2>2.8. generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val,rb_shf_val, LABELS_MARKERS)<a class="headerlink" href="#generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-labels-markers" title="Permalink to this headline">¶</a></h2>
+<section id="generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-rb-imtech-val-mc-wc-labels-markers">
+<h2>2.8. generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val, rb_shf_val,rb_imtech_val,mc,wc,LABELS_MARKERS)<a class="headerlink" href="#generate-image-tsne-chk-box-marker-rb-val-rb-rs-val-rb-shf-val-rb-imtech-val-mc-wc-labels-markers" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Function generates the image tSNE using the multiplexed images and based on user inputs</p>
 <ul class="simple">
+<li><p>reads in and pre-processes the images</p></li>
 <li><p>Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE</p></li>
 <li><p>Generates thumbnails, and pastes these onto the static canvas</p></li>
 <li><p>Stores the thumbnails in the output folder</p></li>
 <li><p>Updates the hover tool with thumbnail paths, marker names and metadata</p></li>
 <li><p>shuffle or no shuffle option is handled in this function where images are randomly shuffled</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_image_tSNE</span><span class="p">(</span><span class="n">chk_box_marker</span><span class="p">,</span><span class="n">rb_val</span><span class="p">,</span><span class="n">rb_rs_val</span><span class="p">,</span><span class="n">rb_shf_val</span><span class="p">,</span> <span class="n">LABELS_MARKERS</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_image_tSNE</span><span class="p">(</span><span class="n">chk_box_marker</span><span class="p">,</span><span class="n">rb_val</span><span class="p">,</span><span class="n">rb_rs_val</span><span class="p">,</span><span class="n">rb_shf_val</span><span class="p">,</span><span class="n">rb_imtech_val</span><span class="p">,</span><span class="n">mc</span><span class="p">,</span><span class="n">wc</span> <span class="n">LABELS_MARKERS</span><span class="p">):</span>
      <span class="c1"># Refer main.py() on Github</span>
      <span class="k">return</span><span class="p">([</span><span class="n">file_name_rot</span><span class="p">,</span><span class="n">tsne</span><span class="p">,</span> <span class="n">file_name_hover</span><span class="p">])</span>
 </pre></div>
@@ -307,6 +318,14 @@ Choice of having a border for each image based on image metadata. If ‘No’ is
 Choice to create a tSNE based on user-defined points, random coordinates or stack the images in rows</p>
 <p><code class="docutils literal notranslate"><span class="pre">rb_shf_val</span> <span class="pre">:</span> <span class="pre">str</span></code>
 Choice to shuffle images (‘Yes’) or not (‘No’) while rendering the images on the static canvas</p>
+<p><code class="docutils literal notranslate"><span class="pre">rb_imtech_val</span> <span class="pre">:</span> <span class="pre">int</span></code>
+If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked</p>
+<p><code class="docutils literal notranslate"><span class="pre">mc</span> <span class="pre">:</span> <span class="pre">list</span></code>
+List of all markers available as shown on GUI</p>
+<p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">:</span> <span class="pre">list</span></code>
+List of weights for all markers shown on GUI</p>
+<p><code class="docutils literal notranslate"><span class="pre">rb_imtech_val</span> <span class="pre">:</span> <span class="pre">int</span></code>
+If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked</p>
 <p><code class="docutils literal notranslate"><span class="pre">LABELS_MARKERS</span> <span class="pre">:</span> <span class="pre">list</span></code>
 List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.
 User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE</p>
@@ -320,8 +339,8 @@ The coordinates are generated based on number of images and size (length and bre
 file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
 </div></blockquote>
 </section>
-<section id="draw-tsne-scatter-tsne1-file-name-hover">
-<h2>2.9. draw_tSNE_scatter(tsne1, file_name_hover)<a class="headerlink" href="#draw-tsne-scatter-tsne1-file-name-hover" title="Permalink to this headline">¶</a></h2>
+<section id="draw-tsne-scatter-tsne1-file-name-hover-cluster-ms-list">
+<h2>2.9. draw_tSNE_scatter(tsne1,file_name_hover,cluster_ms_list)<a class="headerlink" href="#draw-tsne-scatter-tsne1-file-name-hover-cluster-ms-list" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>Function that generates the image tSNE scatter plots for the Live canvases</p>
 <p><strong>Parameters</strong></p>
@@ -330,6 +349,8 @@ file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
 The coordinates are generated based on number of images and size (length and breadth) of the static canvas</p>
 <p><code class="docutils literal notranslate"><span class="pre">file_name_hover</span> <span class="pre">:</span> <span class="pre">str</span></code>
 file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
+<p><code class="docutils literal notranslate"><span class="pre">cluster_ms_list</span> <span class="pre">:</span> <span class="pre">list</span></code>
+list of channel names necessary to populate the hover tool in the live panels</p>
 <p><strong>Output</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">p1,</span> <span class="pre">p2,</span> <span class="pre">p3,</span> <span class="pre">p4</span> <span class="pre">:</span> <span class="pre">figure</span></code>
 Live canvas with tSNE scatter plots for each of the image metadata</p>
