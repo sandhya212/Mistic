@@ -11,9 +11,9 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
 
 	* Navigate to ``Mistic_code/code/user_inputs/``
 
-* Download data from 
+* Download data from `link`_. 
 
-	* ``https://www.synapse.org/#!Synapse:syn17865732/wiki/592782``
+.. _link: https://www.synapse.org/#!Synapse:syn17865732/wiki/592782
 
 	*  Go to Files -> DATASET-1 -> LUNG-1-LN -> 40X-> ometiff.
 
@@ -30,7 +30,7 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
 
 	* Upload the markers.csv provided by t-CyCIF
 
-		* Go to ``https://www.synapse.org/#!Synapse:syn17865732/wiki/592782``
+		* Go to `link`_.
 
         	* Go to Files -> DATASET-1 -> markers.csv
   
@@ -70,9 +70,7 @@ This is an example where Mistic can be used to view a stack montage made up of t
 
         * Navigate to ``Mistic_code/code/user_inputs/``
 
-* Download data from
-
-        * ``https://www.synapse.org/#!Synapse:syn17865732/wiki/592782``
+* Download data from `link`_.
 
         *  Go to Files -> DATASET-1 -> LUNG-3-PR -> 40X-> singletiff.
 
@@ -83,7 +81,7 @@ This is an example where Mistic can be used to view a stack montage made up of t
 
         * Upload the markers.csv provided by t-CyCIF
 
-                * Go to ``https://www.synapse.org/#!Synapse:syn17865732/wiki/592782``
+                * Go to `link`_. 
 
                 * Go to Files -> DATASET-1 -> markers.csv
 

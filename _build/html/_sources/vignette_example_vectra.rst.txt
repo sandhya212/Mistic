@@ -12,9 +12,9 @@ Each Vectra image is in TIFF format, is up to 43MB in size with dimensions 1344 
 
 	* Navigate to ``Mistic_code/code/user_inputs/``
 
-* Download data from 
+* Download data from `link`_.
 
-	* ``https://doi.org/10.5281/zenodo.6131933``
+.. _link: https://doi.org/10.5281/zenodo.6131933
 
 	*  Place it in the /user_inputs/figures/ folder
 

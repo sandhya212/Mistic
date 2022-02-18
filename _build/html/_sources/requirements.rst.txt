@@ -17,7 +17,9 @@ Software requirements
 
 * Python 3.6 (code also tested and runs on Python 3.7)
 
-  * Install Python from here: ``https://www.python.org/downloads/``
+  * Install Python from `here`_.
+
+.. _here: https://www.python.org/downloads/
 
   * Open a command prompt (or the Terminal application) to download ``pip``. Type: 
    

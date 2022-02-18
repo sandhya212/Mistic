@@ -4,17 +4,17 @@ Code Installation
 Download Mistic
 ***************
 
-* Download this code repository from: 
+* Download this code repository from `link`_.
 
-``https://github.com/MathOnco/Mistic``
+.. _link: https://github.com/MathOnco/Mistic
 
 * Open a Terminal and at the command line, type: 
 
 ``$ git clone https://github.com/MathOnco/Mistic.git``
 
-* Code can also be downloaded from: 
+* Code can also be downloaded from `here`_. 
 
-``https://zenodo.org/record/5912170#.YfrkKljML1I``
+.. _here: https://zenodo.org/record/5912170#.YfrkKljML1I
 
 Preload user data
 *****************
