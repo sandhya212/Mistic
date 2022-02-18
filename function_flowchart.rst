@@ -309,7 +309,7 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val, rb_shf_val,rb_imtech_val,mc
         
         Function generates the image tSNE using the multiplexed images and based on user inputs
 	
-	- reads in and pre-processes the images
+	- Reads in and pre-processes the images
         - Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE
         - Generates thumbnails, and pastes these onto the static canvas
         - Stores the thumbnails in the output folder
