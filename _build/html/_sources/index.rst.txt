@@ -16,7 +16,8 @@ Welcome to Mistic's documentation!
    requirements
    install 
    mistic_exp
-   vignette_example
+   vignette_example_tcycif
+   vignette_example_vectra 
    apidocs
 
 Indices and tables

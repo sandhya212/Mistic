@@ -1,5 +1,5 @@
-Vignettes on public data
-========================
+Vignettes on t-CyCIF data
+=========================
 
 We provide example vignettes to help users run Mistic. Check out our :doc:`mistic_exp` page for examples Mistic has been tested on and :doc:`function_flowchart` for a full list of functions Mistic uses. 
 

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Vignettes on t-CyCIF data &mdash; Mistic  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. Vignettes on Vectra data" href="vignette_example_vectra.html" />
+    <link rel="prev" title="5. Mistic experiments" href="mistic_exp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Mistic
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_flowchart.html">2. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">3. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">4. Code Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mistic_exp.html">5. Mistic experiments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Vignettes on t-CyCIF data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#t-cycif-image-on-lung-adenocarcinoma-metastasis-to-lymph-node">6.1. t-CyCIF image on Lung adenocarcinoma metastasis to lymph node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t-cycif-image-on-primary-lung-squamous-cell-carcinoma">6.2. t-CyCIF image on Primary lung squamous cell carcinoma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vignette_example_vectra.html">7. Vignettes on Vectra data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apidocs.html">8. Apidocs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Mistic</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>6. Vignettes on t-CyCIF data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/vignette_example_tcycif.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vignettes-on-t-cycif-data">
+<h1>6. Vignettes on t-CyCIF data<a class="headerlink" href="#vignettes-on-t-cycif-data" title="Permalink to this headline">¶</a></h1>
+<p>We provide example vignettes to help users run Mistic. Check out our <a class="reference internal" href="mistic_exp.html"><span class="doc">Mistic experiments</span></a> page for examples Mistic has been tested on and <a class="reference internal" href="function_flowchart.html"><span class="doc">Functions</span></a> for a full list of functions Mistic uses.</p>
+<section id="t-cycif-image-on-lung-adenocarcinoma-metastasis-to-lymph-node">
+<h2>6.1. t-CyCIF image on Lung adenocarcinoma metastasis to lymph node<a class="headerlink" href="#t-cycif-image-on-lung-adenocarcinoma-metastasis-to-lymph-node" title="Permalink to this headline">¶</a></h2>
+<p>This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9666, and has 44 marker channels. To simultaneously test Mistic for scalability, we created duplicates of this image. In <a class="reference internal" href="mistic_exp.html"><span class="doc">Mistic experiments</span></a> 5.3, we use 70 duplicates of this image and render it on Mistic for 6 markers: CD45, Keratin, aSMA, FoXP3, PD-1, PD-L1.</p>
+<ul>
+<li><p>Download Mistic as described here <a class="reference internal" href="install.html"><span class="doc">Code Installation</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">Mistic_code/code/user_inputs/</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Download data from</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://www.synapse.org/#!Synapse:syn17865732/wiki/592782</span></code></p></li>
+<li><p>Go to Files -&gt; DATASET-1 -&gt; LUNG-1-LN -&gt; 40X-&gt; ometiff.</p></li>
+<li><p>Download <code class="docutils literal notranslate"><span class="pre">lung-1-ln_40x.ome.tif</span></code> and place it in the /user_inputs/figures/ folder</p></li>
+<li><p>Create say 3 copies of this .tif file in the /figures folder</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Navigate to the /user_inputs/metadata folder</p>
+<blockquote>
+<div><ul>
+<li><p>Upload the imaging markers of interest as Markers_ids.csv</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A sample .csv is provided in the /metadata folder</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Upload the markers.csv provided by t-CyCIF</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">https://www.synapse.org/#!Synapse:syn17865732/wiki/592782</span></code></p></li>
+<li><p>Go to Files -&gt; DATASET-1 -&gt; markers.csv</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Optional uploads:</p>
+<blockquote>
+<div><ul>
+<li><p>Image tSNE co-ordinates as X_imagetSNE.csv</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of random coordinates to render the images</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Cluster labels as Cluster_categories.csv</p></li>
+<li><p>Patient_ids as Patient_ids.csv</p></li>
+<li><p>Treatments as Treatment_catgories.csv</p></li>
+<li><p>Patient response as Response_categories.csv</p></li>
+<li><p>If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray, for the live panels.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Sample metadata files are provided for reference in the /metadata folder</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Open a command prompt (or the Terminal application), change to the directory containing /code and type</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span> <span class="pre">--port</span> <span class="pre">5098</span> <span class="pre">--show</span> <span class="pre">image_tSNE_GUI</span></code></p></li>
+<li><p>This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at <a class="reference external" href="http://localhost:5098/image_tSNE_GUI">http://localhost:5098/image_tSNE_GUI</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>From the GUI, choose ‘t-CyCIF’ from the dropdown menu, check the boxes for markers of interest and select other options based on image metadata (for example, border, image layout) and click ‘Run’</p></li>
+</ul>
+</section>
+<section id="t-cycif-image-on-primary-lung-squamous-cell-carcinoma">
+<h2>6.2. t-CyCIF image on Primary lung squamous cell carcinoma<a class="headerlink" href="#t-cycif-image-on-primary-lung-squamous-cell-carcinoma" title="Permalink to this headline">¶</a></h2>
+<p>This is an example where Mistic can be used to view a stack montage made up of the individual markers for a single multiplexed image (see <a class="reference internal" href="mistic_exp.html"><span class="doc">Mistic experiments</span></a> 5.4). We show this option on the t-CyCIF image on Primary lung squamous cell carcinoma. This is in OME-TIFF format for all 44 marker channels.</p>
+<ul>
+<li><p>Download Mistic as described here <a class="reference internal" href="install.html"><span class="doc">Code Installation</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">Mistic_code/code/user_inputs/</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Download data from</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://www.synapse.org/#!Synapse:syn17865732/wiki/592782</span></code></p></li>
+<li><p>Go to Files -&gt; DATASET-1 -&gt; LUNG-3-PR -&gt; 40X-&gt; singletiff.</p></li>
+<li><p>Download the 44 single channel tifs (<code class="docutils literal notranslate"><span class="pre">lung-3-pr_40x_x.tif</span></code>) and place it in the /user_inputs/figures/ folder</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Navigate to the /user_inputs/metadata folder</p>
+<blockquote>
+<div><ul>
+<li><p>Upload the markers.csv provided by t-CyCIF</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">https://www.synapse.org/#!Synapse:syn17865732/wiki/592782</span></code></p></li>
+<li><p>Go to Files -&gt; DATASET-1 -&gt; markers.csv</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Open a command prompt (or the Terminal application), change to the directory containing /code and type</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span> <span class="pre">--port</span> <span class="pre">5098</span> <span class="pre">--show</span> <span class="pre">image_tSNE_GUI</span></code></p></li>
+<li><p>This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at <a class="reference external" href="http://localhost:5098/image_tSNE_GUI">http://localhost:5098/image_tSNE_GUI</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>From the GUI, choose ‘t-CyCIF’ from the dropdown menu, select the ‘Stack montage’ option and click ‘Run’</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mistic_exp.html" class="btn btn-neutral float-left" title="5. Mistic experiments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vignette_example_vectra.html" class="btn btn-neutral float-right" title="7. Vignettes on Vectra data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Sandhya Prabhakaran.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
