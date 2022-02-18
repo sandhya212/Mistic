@@ -14,7 +14,7 @@ Each Vectra image is in TIFF format, is up to 43MB in size with dimensions 1344 
 
 * Download data from 
 
-	* ``https://#!Synapse:syn17865732/wiki/592782``
+	* ``https://doi.org/10.5281/zenodo.6131933``
 
 	*  Place it in the /user_inputs/figures/ folder
 
