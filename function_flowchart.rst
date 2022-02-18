@@ -263,7 +263,7 @@ generate_stack_montage(chk_box_marker_sm, rb_imtech_val, LABELS_MARKERS)
         
         Function generates a stack montage by using each marker channel of a multiplexed image.
 	
-	- Reads in and processes the image channels 
+	- Reads in and pre-processes the image channels 
 	- Generates evenly-spaced points on the static canvas to arrange the images in rows
 	- Generates thumbnails, and pastes these onto the static canvas
 	- Stores the thumbnails in the output folder
