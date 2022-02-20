@@ -263,7 +263,7 @@ generate_stack_montage(chk_box_marker_sm, rb_imtech_val, LABELS_MARKERS)
         
         Function generates a stack montage by using each marker channel of a multiplexed image.
 	
-	- Reads in and processes the image channels 
+	- Reads in and pre-processes the image channels 
 	- Generates evenly-spaced points on the static canvas to arrange the images in rows
 	- Generates thumbnails, and pastes these onto the static canvas
 	- Stores the thumbnails in the output folder
@@ -309,7 +309,7 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val, rb_shf_val,rb_imtech_val,mc
         
         Function generates the image tSNE using the multiplexed images and based on user inputs
 	
-	- reads in and pre-processes the images
+	- Reads in and pre-processes the images
         - Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE
         - Generates thumbnails, and pastes these onto the static canvas
         - Stores the thumbnails in the output folder
@@ -346,9 +346,6 @@ generate_image_tSNE(chk_box_marker,rb_val,rb_rs_val, rb_shf_val,rb_imtech_val,mc
 
 	``wc : list``
 	List of weights for all markers shown on GUI
-
-        ``rb_imtech_val : int``
-        If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked
 
         ``LABELS_MARKERS : list``
         List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.

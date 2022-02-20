@@ -50,7 +50,7 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
 
 		 * If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray, for the live panels. 
      
-    	* Sample metadata files are provided for reference in the /metadata folder 
+    	* Sample metadata files are provided for reference in the /metadata/t-CyCIF folder 
 
 * Open a command prompt (or the Terminal application), change to the directory containing /code and type
   
@@ -84,8 +84,8 @@ This is an example where Mistic can be used to view a stack montage made up of t
                 * Go to `link`_. 
 
                 * Go to Files -> DATASET-1 -> markers.csv
+               
 
-      
 * Open a command prompt (or the Terminal application), change to the directory containing /code and type
 
    *  ``pip install -r requirements.txt``

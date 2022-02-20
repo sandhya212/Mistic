@@ -45,7 +45,7 @@ Each Vectra image is in TIFF format, is up to 43MB in size with dimensions 1344 
 
 		 * If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray, for the live panels. 
      
-    	         * Sample metadata files are provided for reference in the /metadata folder 
+	* Sample metadata files are provided for reference in the /metadata/Vectra folder 
 
 * Open a command prompt (or the Terminal application), change to the directory containing /code and type
   

@@ -56,7 +56,6 @@
 <li class="toctree-l1"><a class="reference internal" href="mistic_exp.html">5. Mistic experiments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vignette_example_tcycif.html">6. Vignettes on t-CyCIF data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vignette_example_vectra.html">7. Vignettes on Vectra data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="apidocs.html">8. Apidocs</a></li>
 </ul>
 
         </div>
@@ -262,7 +261,7 @@ list of channel names necessary to populate the hover tool in the live panels</p
 <blockquote>
 <div><p>Function generates a stack montage by using each marker channel of a multiplexed image.</p>
 <ul class="simple">
-<li><p>Reads in and processes the image channels</p></li>
+<li><p>Reads in and pre-processes the image channels</p></li>
 <li><p>Generates evenly-spaced points on the static canvas to arrange the images in rows</p></li>
 <li><p>Generates thumbnails, and pastes these onto the static canvas</p></li>
 <li><p>Stores the thumbnails in the output folder</p></li>
@@ -297,7 +296,7 @@ file name with path to populate the ‘thumbnail’ entry in the Hover tool</p>
 <blockquote>
 <div><p>Function generates the image tSNE using the multiplexed images and based on user inputs</p>
 <ul class="simple">
-<li><p>reads in and pre-processes the images</p></li>
+<li><p>Reads in and pre-processes the images</p></li>
 <li><p>Generates random or evenly-spaced points on the static canvas to arrange the images in rows/Reads in the user-provided tSNE</p></li>
 <li><p>Generates thumbnails, and pastes these onto the static canvas</p></li>
 <li><p>Stores the thumbnails in the output folder</p></li>
@@ -324,8 +323,6 @@ If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is 
 List of all markers available as shown on GUI</p>
 <p><code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">:</span> <span class="pre">list</span></code>
 List of weights for all markers shown on GUI</p>
-<p><code class="docutils literal notranslate"><span class="pre">rb_imtech_val</span> <span class="pre">:</span> <span class="pre">int</span></code>
-If value = 0, Vectra processing is invoked, if value = 1, t-CyCIF processing is invoked and if value = 2, CODEX processing is invoked</p>
 <p><code class="docutils literal notranslate"><span class="pre">LABELS_MARKERS</span> <span class="pre">:</span> <span class="pre">list</span></code>
 List of all marker channels in the multiplexed images. This is provided by the user in user_inputs/metadata folder as Markers.csv.
 User can still choose a subset of LABELS_MARKERS, through the GUI, for visualizing the image tSNE</p>
