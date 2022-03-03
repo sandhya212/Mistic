@@ -14,7 +14,7 @@ Download Mistic
 
 * Code can also be downloaded from `here`_. 
 
-.. _here: https://zenodo.org/record/5912170#.YfrkKljML1I
+.. _here: https://doi.org/10.5281/zenodo.5912169
 
 Preload user data
 *****************
