@@ -80,34 +80,58 @@
 <h1>4. Code Installation<a class="headerlink" href="#code-installation" title="Permalink to this headline">¶</a></h1>
 <section id="download-mistic">
 <h2>4.1. Download Mistic<a class="headerlink" href="#download-mistic" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mistic</span></code></p></li>
+<li><p>To download Mistic’s code repository, perform one of the three options:</p>
 <ul class="simple">
-<li><p>Download this code repository from <a class="reference external" href="https://github.com/MathOnco/Mistic">link</a>.</p></li>
+<li><p>Download the code repository from <a class="reference external" href="https://github.com/MathOnco/Mistic">link</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Open a Terminal and at the command line, type:</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/MathOnco/Mistic.git</span></code></p>
 <ul class="simple">
-<li><p>Code can also be downloaded from <a class="reference external" href="https://doi.org/10.5281/zenodo.5912169">here</a>.</p></li>
+<li><p>Code can also be downloaded from <a class="reference external" href="https://doi.org/10.5281/zenodo.5912169">Zenodo</a>.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="preload-user-data">
 <h2>4.2. Preload user data<a class="headerlink" href="#preload-user-data" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>In the Mistic folder, navigate to /user_inputs folder to upload input files:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Mistic_code/code/user_inputs/</span></code></p></li>
-<li><p>Use the /figures folder to upload the multiplexed images</p></li>
-<li><p>Use the /metadata folder to upload the imaging markers of interest as Markers_ids.csv</p></li>
-<li><p>(Optional) Use the /metadata folder to</p>
 <ul>
-<li><p>Upload image tSNE co-ordinates as X_imagetSNE.csv</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mistic_code/code/user_inputs/</span></code></p></li>
+<li><p>Use the /figures folder to upload the multiplexed images</p>
+<ul class="simple">
+<li><p>Example NSCLC dataset is available from <a class="reference external" href="https://doi.org/10.5281/zenodo.6131933">Zenodo_data</a>.</p></li>
+</ul>
+<blockquote>
+<div></div></blockquote>
+</li>
+<li><p>Use the /metadata folder to upload the markers.csv and imaging markers of interest as Markers_ids.csv</p>
+<ul class="simple">
+<li><p>Note: For the Stack Montage option, only the markers.csv file is required.</p></li>
+</ul>
+</li>
+<li><p>(Optional) Use the /metadata folder to</p>
+<ul class="simple">
+<li><p>Upload image tSNE co-ordinates as X_imagetSNE.csv</p>
+<ul>
+<li><p>If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of t-SNE coordinates to render the images</p></li>
+</ul>
+</li>
 <li><p>Upload image metadata such as</p>
 <ul>
-<li><p>Cluster labels as Cluster_categories.csv</p></li>
+<li><p>Cluster labels as Cluster_categories.csv</p>
+<ul>
+<li><p>If cluster labels are not provided, Mistic will cluster the images using a Bayesian mixture model.</p></li>
+</ul>
+</li>
 <li><p>Patient_ids as Patient_ids.csv</p></li>
 <li><p>Treatments as Treatment_catgories.csv</p></li>
-<li><p>Patent response as Response_categories.csv</p></li>
+<li><p>Patient response as Response_categories.csv</p></li>
+<li><p>If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray.</p></li>
 </ul>
 </li>
 <li><p>Sample metadata files are provided for reference</p></li>
@@ -115,21 +139,15 @@
 </li>
 </ul>
 </li>
-<li><p>Open a command prompt (or the Terminal application), change to the directory containing /code and type</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
-</ul>
-</div></blockquote>
-</li>
 </ul>
 </section>
 <section id="run-mistic">
 <h2>4.3. Run Mistic<a class="headerlink" href="#run-mistic" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Upon successful completion of the previous step, Mistic can be run.</p></li>
-<li><p>To run the application, at the command prompt pointing to /app, type</p>
+<li><p>To run the application, at the command prompt pointing to /code, type</p>
 <ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">.git</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">rm</span> <span class="pre">-rf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">&quot;.DS_Store&quot;</span> <span class="pre">-delete</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span> <span class="pre">--port</span> <span class="pre">5098</span> <span class="pre">--show</span> <span class="pre">image_tSNE_GUI</span></code></p></li>
 <li><p>This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at <a class="reference external" href="http://localhost:5098/image_tSNE_GUI">http://localhost:5098/image_tSNE_GUI</a></p></li>
 </ul>

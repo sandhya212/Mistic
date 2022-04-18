@@ -15,7 +15,7 @@ Software requirements
 *********************
 
 
-* Python 3.6 (code also tested and runs on Python 3.7)
+* Python >= 3.6
 
   * Install Python from `here`_.
 
@@ -28,3 +28,4 @@ Software requirements
    * ``python3 get-pip.py`` and wait for the installation to complete
   
    * Verify the ``pip`` installation by typing ``python3 get-pip.py``
+
