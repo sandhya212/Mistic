@@ -12,7 +12,7 @@ Datasets used to test Mistic
 
 ..
 
-Table listing the different datasets Mistic has been tested on
+Table listing the different datasets Mistic has been tested on.
 
 Non-small cell lung cancer
 --------------------------
