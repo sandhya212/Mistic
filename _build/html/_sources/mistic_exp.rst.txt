@@ -4,7 +4,7 @@ Mistic experiments
 Datasets used to test Mistic
 ----------------------------
 
-.. image:: figures/Table_2.png
+.. image:: figures/Table_3.png
    :width: 700
    :alt: Table 
 
@@ -12,7 +12,7 @@ Datasets used to test Mistic
 
 ..
 
-Table listing the different datasets Mistic has been tested on
+Table listing the different datasets Mistic has been tested on.
 
 Non-small cell lung cancer
 --------------------------

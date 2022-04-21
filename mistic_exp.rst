@@ -4,7 +4,7 @@ Mistic experiments
 Datasets used to test Mistic
 ----------------------------
 
-.. image:: figures/Table_2.png
+.. image:: figures/Table_3.png
    :width: 700
    :alt: Table 
 
