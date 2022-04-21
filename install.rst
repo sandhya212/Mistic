@@ -36,7 +36,7 @@ Preload user data
   
   * Use the /metadata folder to upload the markers.csv and imaging markers of interest as Markers_ids.csv
     
-    * Example files are provided in the subfolders: Vectra, t-CyCIF and CODEX
+    * Example files are provided in the subfolders: Vectra, CyCIF, t-CyCIF and CODEX
     
     * Move the files from the relevant subfolder into the /metadata folder
     
@@ -63,7 +63,7 @@ Preload user data
     
       * If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray.
 
-      * Sample metadata files are provided for reference in separate subfolders for each imaging technique (Vectra, t-CyCIF and CODEX) in the /metadata folder
+      * Sample metadata files are provided for reference in separate subfolders for each imaging technique (Vectra, CyCIF, t-CyCIF and CODEX) in the /metadata folder
 
       * If using the sample metadata, move the files from the relevant subfolder into the /metadata folder
 

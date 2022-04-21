@@ -4,7 +4,7 @@ Introduction
 What is Mistic
 --------------
 This is a Python tool using the Bokeh library to view multiple multiplex images simultaneously.
-The code has been tested on 7-panel Vectra TIFF, 32- & 64-panel CODEX TIFF, 16-panel CODEX QPTIFF and 44-panel t-CyCIF TIFF images.
+The code has been tested on 7-panel Vectra TIFF, 32- & 64-panel CODEX TIFF, 16-panel CODEX QPTIFF, 4-panel CyCIF TIFF,  and 44-panel t-CyCIF TIFF images.
 
 .. image:: figures/Mistic_GUI.jpg
   :width: 600
@@ -42,7 +42,7 @@ Mistic features
   
   *   live canvases with tSNE scatter plots for image metadata rendering
 
-* Dropdown option to select the imaging technique: Vectra, t-CyCIF, or CODEX
+* Dropdown option to select the imaging technique: Vectra, CyCIF, t-CyCIF, or CODEX
 
 * Option to choose between Stack montage view or multiple multiplexed images by selecting the markers to be visualised at once
 
