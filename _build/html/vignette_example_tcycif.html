@@ -105,7 +105,8 @@
 <li><p>Upload the imaging markers of interest as Markers_ids.csv</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>A sample .csv is provided in the /metadata folder</p></li>
+<li><p>A sample .csv is provided in the /metadata/t-CyCIF folder</p></li>
+<li><p>If using the sample .csv, move this file from /metadata/t-CyCIF to /metadata folder</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -119,31 +120,45 @@
 </li>
 <li><p>Optional uploads:</p>
 <blockquote>
+<div><blockquote>
 <div><ul>
 <li><p>Image tSNE co-ordinates as X_imagetSNE.csv</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of random coordinates to render the images</p></li>
+<li><p>If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of t-SNE  coordinates to render the images</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Cluster labels as Cluster_categories.csv</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>Cluster labels as Cluster_categories.csv</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If cluster labels are not provided, Mistic will cluster the images using a Bayesian mixture model.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
 <li><p>Patient_ids as Patient_ids.csv</p></li>
 <li><p>Treatments as Treatment_catgories.csv</p></li>
 <li><p>Patient response as Response_categories.csv</p></li>
 <li><p>If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray, for the live panels.</p></li>
+<li><p>Sample metadata files are provided for reference in the /metadata/t-CyCIF folder</p></li>
+<li><p>If using the sample metadata, move the files from /metadata/t-CyCIF/ into the /metadata folder</p></li>
 </ul>
 </div></blockquote>
+</div></blockquote>
 </li>
-<li><p>Sample metadata files are provided for reference in the /metadata/t-CyCIF folder</p></li>
 </ul>
 </div></blockquote>
 </li>
 <li><p>Open a command prompt (or the Terminal application), change to the directory containing /code and type</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span> <span class="pre">--port</span> <span class="pre">5098</span> <span class="pre">--show</span> <span class="pre">image_tSNE_GUI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">mistic.sh</span></code></p></li>
 <li><p>This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at <a class="reference external" href="http://localhost:5098/image_tSNE_GUI">http://localhost:5098/image_tSNE_GUI</a></p></li>
 </ul>
 </div></blockquote>
@@ -187,8 +202,7 @@
 <li><p>Open a command prompt (or the Terminal application), change to the directory containing /code and type</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span> <span class="pre">--port</span> <span class="pre">5098</span> <span class="pre">--show</span> <span class="pre">image_tSNE_GUI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">mistic.sh</span></code></p></li>
 <li><p>This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at <a class="reference external" href="http://localhost:5098/image_tSNE_GUI">http://localhost:5098/image_tSNE_GUI</a></p></li>
 </ul>
 </div></blockquote>

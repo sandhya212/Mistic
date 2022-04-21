@@ -30,11 +30,15 @@ Preload user data
   
   * Use the /figures folder to upload the multiplexed images
     
-    * Example NSCLC dataset is available from `Zenodo_data`_.
+    * Example NSCLC Vectra dataset is available from `Zenodo_data`_.
   
      .. _Zenodo_data: https://doi.org/10.5281/zenodo.6131933
   
   * Use the /metadata folder to upload the markers.csv and imaging markers of interest as Markers_ids.csv
+    
+    * Example files are provided in the subfolders: Vectra, t-CyCIF and CODEX
+    
+    * Move the files from the relevant subfolder into the /metadata folder
     
     * Note: For the Stack Montage option, only the markers.csv file is required.
 	
@@ -59,18 +63,21 @@ Preload user data
     
       * If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray.
 
-    * Sample metadata files are provided for reference 
+      * Sample metadata files are provided for reference in separate subfolders for each imaging technique (Vectra, t-CyCIF and CODEX) in the /metadata folder
 
+      * If using the sample metadata, move the files from the relevant subfolder into the /metadata folder
 
 Run Mistic
 **********
  
-* To run the application, at the command prompt pointing to /code, type
+* At the command prompt pointing to /code, type
   
-  * ``find . | grep .git | xargs rm -rf``
-  * ``find . -name ".DS_Store" -delete``
-  *  ``bokeh serve --port 5098 --show image_tSNE_GUI``
+  * ``bash mistic.sh``
+
   * This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at http://localhost:5098/image_tSNE_GUI
 
+  * Enter the imaging format, montage or multiplexed views and other user options on the GUI and click ``Run``.
 
-
+* Examples for running Mistic:
+	* t-CYCIF data: :doc:`vignette_example_tcycif`
+	* Vectra data: :doc:`vignette_example_vectra`

@@ -26,7 +26,9 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
 
 	* Upload the imaging markers of interest as Markers_ids.csv
 
-		* A sample .csv is provided in the /metadata folder
+		* A sample .csv is provided in the /metadata/t-CyCIF folder
+		
+		* If using the sample .csv, move this file from /metadata/t-CyCIF to /metadata folder
 
 	* Upload the markers.csv provided by t-CyCIF
 
@@ -38,9 +40,11 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
     
    		 * Image tSNE co-ordinates as X_imagetSNE.csv
    
-			* If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of random coordinates to render the images
- 
-    		 * Cluster labels as Cluster_categories.csv
+			* If no user-generated tSNE co-ordinates are provided, Mistic will generate a set of t-SNE  coordinates to render the images
+
+		* Cluster labels as Cluster_categories.csv
+		
+			* If cluster labels are not provided, Mistic will cluster the images using a Bayesian mixture model.
       
       		 * Patient_ids as Patient_ids.csv
       
@@ -50,12 +54,13 @@ This t-CyCIF image is in OME-TIFF format, 13GB in size with dimensions 10101 x 9
 
 		 * If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray, for the live panels. 
      
-    	* Sample metadata files are provided for reference in the /metadata/t-CyCIF folder 
+    		 * Sample metadata files are provided for reference in the /metadata/t-CyCIF folder 
+
+		 * If using the sample metadata, move the files from /metadata/t-CyCIF/ into the /metadata folder
 
 * Open a command prompt (or the Terminal application), change to the directory containing /code and type
   
-   * ``pip install -r requirements.txt``  
-   * ``bokeh serve --port 5098 --show image_tSNE_GUI``
+   * ``bash mistic.sh``  
    * This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at http://localhost:5098/image_tSNE_GUI
 
 * From the GUI, choose 't-CyCIF' from the dropdown menu, check the boxes for markers of interest and select other options based on image metadata (for example, border, image layout) and click 'Run'
@@ -88,8 +93,7 @@ This is an example where Mistic can be used to view a stack montage made up of t
 
 * Open a command prompt (or the Terminal application), change to the directory containing /code and type
 
-   *  ``pip install -r requirements.txt``
-   * ``bokeh serve --port 5098 --show image_tSNE_GUI``
+   *  ``bash mistic.sh``
    * This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at http://localhost:5098/image_tSNE_GUI
 
 * From the GUI, choose 't-CyCIF' from the dropdown menu, select the 'Stack montage' option and click 'Run'

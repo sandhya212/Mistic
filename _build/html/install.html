@@ -104,13 +104,15 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Mistic_code/code/user_inputs/</span></code></p></li>
 <li><p>Use the /figures folder to upload the multiplexed images</p>
 <ul class="simple">
-<li><p>Example NSCLC dataset is available from <a class="reference external" href="https://doi.org/10.5281/zenodo.6131933">Zenodo_data</a>.</p></li>
+<li><p>Example NSCLC Vectra dataset is available from <a class="reference external" href="https://doi.org/10.5281/zenodo.6131933">Zenodo_data</a>.</p></li>
 </ul>
 <blockquote>
 <div></div></blockquote>
 </li>
 <li><p>Use the /metadata folder to upload the markers.csv and imaging markers of interest as Markers_ids.csv</p>
 <ul class="simple">
+<li><p>Example files are provided in the subfolders: Vectra, t-CyCIF and CODEX</p></li>
+<li><p>Move the files from the relevant subfolder into the /metadata folder</p></li>
 <li><p>Note: For the Stack Montage option, only the markers.csv file is required.</p></li>
 </ul>
 </li>
@@ -132,9 +134,10 @@
 <li><p>Treatments as Treatment_catgories.csv</p></li>
 <li><p>Patient response as Response_categories.csv</p></li>
 <li><p>If any of these are unavailable, Mistic will use either the randomly-generated or user-provided tSNE points without any color coding i.e. dots are colored in gray.</p></li>
+<li><p>Sample metadata files are provided for reference in separate subfolders for each imaging technique (Vectra, t-CyCIF and CODEX) in the /metadata folder</p></li>
+<li><p>If using the sample metadata, move the files from the relevant subfolder into the /metadata folder</p></li>
 </ul>
 </li>
-<li><p>Sample metadata files are provided for reference</p></li>
 </ul>
 </li>
 </ul>
@@ -144,13 +147,20 @@
 <section id="run-mistic">
 <h2>4.3. Run Mistic<a class="headerlink" href="#run-mistic" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>To run the application, at the command prompt pointing to /code, type</p>
+<li><p>At the command prompt pointing to /code, type</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">.git</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">rm</span> <span class="pre">-rf</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">&quot;.DS_Store&quot;</span> <span class="pre">-delete</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bokeh</span> <span class="pre">serve</span> <span class="pre">--port</span> <span class="pre">5098</span> <span class="pre">--show</span> <span class="pre">image_tSNE_GUI</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">mistic.sh</span></code></p></li>
 <li><p>This runs a bokeh server locally and will automatically open the interactive dashboard in your browser at <a class="reference external" href="http://localhost:5098/image_tSNE_GUI">http://localhost:5098/image_tSNE_GUI</a></p></li>
+<li><p>Enter the imaging format, montage or multiplexed views and other user options on the GUI and click <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p></li>
 </ul>
+</li>
+<li><dl class="simple">
+<dt>Examples for running Mistic:</dt><dd><ul>
+<li><p>t-CYCIF data: <a class="reference internal" href="vignette_example_tcycif.html"><span class="doc">Vignettes on t-CyCIF data</span></a></p></li>
+<li><p>Vectra data: <a class="reference internal" href="vignette_example_vectra.html"><span class="doc">Vignettes on Vectra data</span></a></p></li>
+</ul>
+</dd>
+</dl>
 </li>
 </ul>
 </section>

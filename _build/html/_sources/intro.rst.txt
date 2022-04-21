@@ -42,6 +42,8 @@ Mistic features
   
   *   live canvases with tSNE scatter plots for image metadata rendering
 
+* Dropdown option to select the imaging technique: Vectra, t-CyCIF, or CODEX
+
 * Option to choose between Stack montage view or multiple multiplexed images by selecting the markers to be visualised at once
 
 * Option to place a border around each image based on image metadata
