@@ -27,5 +27,5 @@ Software requirements
 
    * ``python3 get-pip.py`` and wait for the installation to complete
   
-   * Verify the ``pip`` installation by typing ``python3 get-pip.py``
+   * Verify the ``pip`` installation by typing ``python3 --version``
 
